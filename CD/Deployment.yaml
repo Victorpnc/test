@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Patient Deployment
+  labels:
+    app: Patient
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: Patient
+  template:
+    metadata:
+      labels:
+        app: Patient
+    spec:
+      containers:
+      - name: nginx
+        image: patient Service
+        ports:
+        - containerPort: 80
+        
